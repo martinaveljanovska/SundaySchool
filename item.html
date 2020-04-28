@@ -26,7 +26,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <link rel="icon" type="image/png" href="">
-  <title>Doyhae</title>
+  <title>Sunday School Online</title>
 
   <!-- og tags -->
   <meta property="og:url" content="" />
@@ -60,6 +60,13 @@
   <!-- slick -->
   <link rel="stylesheet" type="text/css" href="css/slick.min.css" />
   <link rel="stylesheet" type="text/css" href="css/slick-theme.min.css" />
+
+
+  <!-- additional scripts provided by the client -->
+  <script src="https://www.cymtv.com/assets/js/p2p-media-loader-core.min.js"></script>
+  <script src="https://www.cymtv.com/assets/js/p2p-media-loader-hlsjs.min.js"></script>
+  <script src="https://www.cymtv.com/assets/js/clappr.min.js"></script>
+
 </head>
 
 <body>
@@ -71,9 +78,19 @@
       </a>
       <ul id="menu">
         <li><a href="./">Home</a></li>
-        <li> <a href="#package-title-89653" class="page-scroll">News</a> </li>
-        <li> <a href="#package-items-89654" class="page-scroll">Sports</a> </li>
-        <li> <a href="#package-items-89655" class="page-scroll">Film</a> </li>
+        <li>
+          <div class="dropdown">
+            <button class="dropbtn">Subjects
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="#">The Father</a>
+              <a href="#">The Son</a>
+              <a href="#">The Spirit</a>
+              <a href="#">The Spirit</a>
+            </div>
+          </div>
+        </li>
         <li> <a href="#faq" class="page-scroll">FAQ</a> </li>
         <li> <a href="#footer" class="page-scroll">Contact</a> </li>
         <li><a href="#/" class="login-button inplayer-paywall-login">Login</a></li>
@@ -100,14 +117,17 @@
     <div id="packages">
       <div id="packages">
         <div class="package-one package">
-          <h2 id="package-title-89653" class="package-title"></h2>
-          <div id="package-items-89653" class="package-items "></div>
+          <h2 id="package-title-97576" class="package-title"></h2>
+          <div id="package-items-97576" class="package-items "></div>
 
-          <h2 id="package-title-89654" class="package-title"></h2>
-          <div id="package-items-89654" class="package-items "></div>
+          <h2 id="package-title-97577" class="package-title"></h2>
+          <div id="package-items-97577" class="package-items "></div>
 
-          <h2 id="package-title-89655" class="package-title"></h2>
-          <div id="package-items-89655" class="package-items "></div>
+          <h2 id="package-title-97578" class="package-title"></h2>
+          <div id="package-items-97578" class="package-items "></div>
+
+          <h2 id="package-title-97579" class="package-title"></h2>
+          <div id="package-items-97579" class="package-items "></div>
         </div>
       </div>
     </div>
@@ -371,13 +391,13 @@
 
   <script type="text/javascript">
 
-    var paywall = new InplayerPaywall('852d415d-83c7-4768-b4b3-5e23c9ad6be2', [{
-      id: getParameterByName('id')
-    }],
-      {
-        oauthAppKey: '17c128af636af78c894d217a783c07dc',
-        brandingId: 823
-      });
+    // var paywall = new InplayerPaywall('852d415d-83c7-4768-b4b3-5e23c9ad6be2', [{
+    //   id: getParameterByName('id')
+    // }],
+    //   {
+    //     oauthAppKey: '17c128af636af78c894d217a783c07dc',
+    //     brandingId: 823
+    //   });
 
 
     paywall.on('inject', function () {

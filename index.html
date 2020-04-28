@@ -19,7 +19,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <link rel="icon" type="image/png" href="">
-  <title>Doyhae</title>
+  <title>Sunday School Online</title>
 
   <!-- og tags -->
   <meta property="og:url" content="" />
@@ -36,8 +36,9 @@
   <!-- css style -->
   <link rel="stylesheet" href="css/style.min.css">
 
+
   <!-- inplayer script -->
-  <script type='text/javascript' src='https://assets.inplayer.com/paywall/latest/paywall.min.js'></script>
+  <script type="text/javascript" src="https://assets.inplayer.com/paywall/latest/paywall.min.js"></script>
 
   <!-- google fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400|Raleway:400,500" rel="stylesheet">
@@ -54,6 +55,14 @@
   <!-- slick -->
   <link rel="stylesheet" type="text/css" href="css/slick.min.css" />
   <link rel="stylesheet" type="text/css" href="css/slick-theme.min.css" />
+
+
+  <!-- additional scripts provided by the client -->
+  <script src="https://www.cymtv.com/assets/js/p2p-media-loader-core.min.js"></script>
+  <script src="https://www.cymtv.com/assets/js/p2p-media-loader-hlsjs.min.js"></script>
+  <script src="https://www.cymtv.com/assets/js/clappr.min.js"></script>
+
+
 </head>
 
 <body>
@@ -64,9 +73,19 @@
         <img class="logo" src="img/logo.png" alt="logo">
       </a>
       <ul id="menu">
-        <li> <a href="#package-title-89653" class="page-scroll">News</a> </li>
-        <li> <a href="#package-items-89654" class="page-scroll">Sports</a> </li>
-        <li> <a href="#package-items-89655" class="page-scroll">Film</a> </li>
+        <li>
+          <div class="dropdown">
+            <button class="dropbtn">Subjects
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="#">The Father</a>
+              <a href="#">The Son</a>
+              <a href="#">The Spirit</a>
+              <a href="#">The Spirit</a>
+            </div>
+          </div>
+        </li>
         <li> <a href="#faq" class="page-scroll">FAQ</a> </li>
         <li> <a href="#footer" class="page-scroll">Contact</a> </li>
         <li><a href="#/" class="login-button inplayer-paywall-login">Login</a></li>
@@ -81,24 +100,27 @@
   </div>
 
   <div id="header" class="home-page">
-    <div class="header-content">
+    <!-- <div class="header-content">
       <div class="text">
         <h1>Doyhae Universal Studios</h1>
       </div>
-    </div>
+    </div> -->
   </div>
 
   <div class="package-container">
     <div id="packages">
       <div class="package-one package">
-        <h2 id="package-title-89653" class="package-title"></h2>
-        <div id="package-items-89653" class="package-items "></div>
+        <h2 id="package-title-97576" class="package-title"></h2>
+        <div id="package-items-97576" class="package-items "></div>
 
-        <h2 id="package-title-89654" class="package-title"></h2>
-        <div id="package-items-89654" class="package-items "></div>
+        <h2 id="package-title-97577" class="package-title"></h2>
+        <div id="package-items-97577" class="package-items "></div>
 
-        <h2 id="package-title-89655" class="package-title"></h2>
-        <div id="package-items-89655" class="package-items "></div>
+        <h2 id="package-title-97578" class="package-title"></h2>
+        <div id="package-items-97578" class="package-items "></div>
+
+        <h2 id="package-title-97579" class="package-title"></h2>
+        <div id="package-items-97579" class="package-items "></div>
       </div>
     </div>
   </div>
@@ -358,23 +380,6 @@
   <script src="js/paywall.js"></script>
 
 
-  <script type="text/javascript">
-
-
-    var paywall = new InplayerPaywall('852d415d-83c7-4768-b4b3-5e23c9ad6be2', [{
-      id: 88710,
-      options: {
-        noPreview: true,
-        noInject: true
-      }
-    }],
-      {
-        oauthAppKey: '17c128af636af78c894d217a783c07dc',
-        brandingId: 823
-      });
-
-
-  </script>
 </body>
 
 </html>
