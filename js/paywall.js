@@ -3,18 +3,29 @@ var config_ip = {
 	service_url: "https://services.inplayer.com",
 };
 
-var paywall = new InplayerPaywall('3da670ca-d4c8-4c57-8511-c5c90562fc27', [{
-    id: 97576,
-    options: {
-      noPreview: true,
-      noInject: true
-    }
-  }],
-    // {
-    //   oauthAppKey: '17c128af636af78c894d217a783c07dc',
-    //   brandingId: 823
-    // });
+var paywall = new InplayerPaywall("3da670ca-d4c8-4c57-8511-c5c90562fc27", [
+	{
+		id: 97670,
+		options: {
+			noPreview: true,
+			noInject: true,
+		},
+	},
+]);
+// {
+//   oauthAppKey: '17c128af636af78c894d217a783c07dc',
+//   brandingId: 823
+// });
 
+$(".inplayer-paywall-logout").parent().hide();
+paywall.on("authenticated", function () {
+	$(".inplayer-paywall-login").parent().hide();
+	$(".inplayer-paywall-logout").parent().show();
+});
+
+paywall.on("logout", function () {
+	location.reload();
+});
 
 function createItemElement(assetId, assetPhoto, assetTitle) {
 	var output =
@@ -86,9 +97,44 @@ $(function () {
 							"package-items-" + package
 						).innerHTML = output;
 					} // for
+
+					if (packageNumber >= config_ip.packages.length) {
+						console.log(packageNumber);
+
+						$(".carousel").slick({
+							slidesToShow: 3,
+							infinite: true,
+							autoplay: true,
+							autoplaySpeed: 5000,
+							pauseOnHover: true,
+							arrows: true,
+							dots: true,
+							responsive: [
+								{
+									breakpoint: 1150,
+									settings: {
+										slidesToShow: 3,
+									},
+								},
+								{
+									breakpoint: 920,
+									settings: {
+										slidesToShow: 2,
+									},
+								},
+								{
+									breakpoint: 610,
+									settings: {
+										slidesToShow: 1,
+									},
+								},
+							],
+						});
+					} // if packageNumber
 				}
 			); // get items
 		}); // get packages
 	}); //for each
 	// console.log(screen.width)
+	// initSlider();
 });
