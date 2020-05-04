@@ -1,3 +1,13 @@
+
+function getParameterByName(name, url) {
+	if (!url) url = window.location.href;
+	name = name.replace(/[\[\]]/g, "\\$&");
+	var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+		results = regex.exec(url);
+	if (!results) return null;
+	if (!results[2]) return "";
+	return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
 var config_ip = {
 	packages: [97576, 97577, 97578, 97579],
 	service_url: "https://services.inplayer.com",
@@ -5,11 +15,7 @@ var config_ip = {
 
 var paywall = new InplayerPaywall("3da670ca-d4c8-4c57-8511-c5c90562fc27", [
 	{
-		id: 97670,
-		options: {
-			noPreview: true,
-			noInject: true,
-		},
+		id: getParameterByName('id')
 	},
 ]);
 // {
@@ -42,21 +48,13 @@ function createItemElement(assetId, assetPhoto, assetTitle) {
 	return output;
 }
 
-function getParameterByName(name, url) {
-	if (!url) url = window.location.href;
-	name = name.replace(/[\[\]]/g, "\\$&");
-	var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-		results = regex.exec(url);
-	if (!results) return null;
-	if (!results[2]) return "";
-	return decodeURIComponent(results[2].replace(/\+/g, " "));
-}
+
 
 $(function () {
 	$("#preview-item").html(
 		'<div id="inplayer-' +
-			getParameterByName("id") +
-			'" class="inplayer-paywall"></div>'
+		getParameterByName("id") +
+		'" class="inplayer-paywall"></div>'
 	);
 
 	$(".inplayer-paywall-logout").parent().hide();
@@ -78,9 +76,9 @@ $(function () {
 
 			$.get(
 				config_ip.service_url +
-					"/items/packages/" +
-					package +
-					"/items?limit=500",
+				"/items/packages/" +
+				package +
+				"/items?limit=500",
 				(response) => {
 					var output = "";
 					packageNumber++;
