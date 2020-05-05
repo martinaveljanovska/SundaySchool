@@ -1,4 +1,3 @@
-
 function getParameterByName(name, url) {
 	if (!url) url = window.location.href;
 	name = name.replace(/[\[\]]/g, "\\$&");
@@ -15,7 +14,7 @@ var config_ip = {
 
 var paywall = new InplayerPaywall("3da670ca-d4c8-4c57-8511-c5c90562fc27", [
 	{
-		id: getParameterByName('id')
+		id: getParameterByName("id"),
 	},
 ]);
 // {
@@ -48,13 +47,11 @@ function createItemElement(assetId, assetPhoto, assetTitle) {
 	return output;
 }
 
-
-
 $(function () {
 	$("#preview-item").html(
 		'<div id="inplayer-' +
-		getParameterByName("id") +
-		'" class="inplayer-paywall"></div>'
+			getParameterByName("id") +
+			'" class="inplayer-paywall"></div>'
 	);
 
 	$(".inplayer-paywall-logout").parent().hide();
@@ -73,12 +70,12 @@ $(function () {
 		$.get(config_ip.service_url + "/items/packages/" + package, (response) => {
 			var packageTitle = response.title;
 			$("#package-title-" + package).html(packageTitle);
-
+			$("#title-" + package).html(packageTitle);
 			$.get(
 				config_ip.service_url +
-				"/items/packages/" +
-				package +
-				"/items?limit=500",
+					"/items/packages/" +
+					package +
+					"/items?limit=500",
 				(response) => {
 					var output = "";
 					packageNumber++;
