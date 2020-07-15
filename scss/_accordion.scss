@@ -13,6 +13,10 @@
       list-style: none;
       padding: 0 5%;
 
+      p {
+        padding: 10px;
+      }
+
       h3 {
         text-align: center;
       }
@@ -55,6 +59,12 @@
           border-top: none;
           border-bottom-right-radius: 0.3em;
           border-bottom-left-radius: 0.3em;
+
+          ul {
+            li {
+              list-style: disc;
+            }
+          }
         }
       }
     }
